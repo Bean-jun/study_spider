@@ -51,7 +51,7 @@ def create(addr):
     '''创建目录'''
     creat_dir = []
     page_link_s,count = get_main_link()
-    for page in page_link_s[0:1]:
+    for page in page_link_s[0:2]:
         pattern = re.compile(r'\d{6,10}')
         number = re.findall(pattern, page)
         word = number[0]
@@ -157,5 +157,5 @@ def get_photo_one_link(page_link):
 if __name__ =='__main__':
     print('开始下载...')
     page_link, count = get_main_link()   # 这个爬全部妹子的图  
-    get_photo_one_link(page_link[0:1]) #  默认每日更新图库 
+    get_photo_one_link(page_link[0:2]) #  默认每日更新图库 
     print('下载结束！！！！')
