@@ -38,7 +38,71 @@
         # 出版社 //*[@class="publisher_info"]/a[1]/text()  ### 注意：偶数个才是出版社名
         # 价格 //*[@class="price"]/p[1]/span[1]/text()
         ```
+4. [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py)
 
+   - 抓取豆瓣网站长评论、原文摘录以及读书笔记
+  
+   - 此次抓取使用多线程提高了抓取速度 
+  
+   - 在本小项目中，由于时间较为紧迫，导致部分代码中含有较多看似相同的代码，在长评论、原文摘录以及读书笔记中最明显，原因如下：
+  
+     - 获取的xpath部分是相同的
+  
+     - 代码形体看似是相同的
+  
+   - 已想到的解决方法
+
+     - 建造一个新的方法，该方法直接通过传入参数值的方式来抓取，并返回结果
+  
+     - 然后删减掉长评论、原文摘录以及读书笔记中部分代码，使用刚建造的方法来返回值，从而保存数据
+
+    - 使用方法(以人间失格为例)
+      - 首先进入[豆瓣读书网](https://book.douban.com/)，这是它的主页面
+       ![alt](douban_web_spider/img/豆瓣读书主页.png)
+
+      - 通过搜索框输入想要的书名，这里输入人间失格，打开后是这个界面
+       ![alt](douban_web_spider/img/人间失格.png)
+
+       - 将上述界面中③的内容写入到右边括号()内
+        `douban = DouBanBook()`
+
+       - 注意：本项目支持多本书的爬取，你可以在上述括号内填入更多的书的ID，使用英文`,`隔开即可
+        
+       - 数据有一个简单清洗，抓取后存放在MongoDB中
+         - 效果如下
+          ![alt](douban_web_spider/img/book_content.png)
+          ![alt](douban_web_spider/img/original.png)
+          ![alt](douban_web_spider/img/comments.png)
+          ![alt](douban_web_spider/img/notes.png)
+
+    
+    - 抓取时，使用的xpath和思路如下：
+
+        ```
+        # 书名  //*[@property="v:itemreviewed"]/text()
+        # 原作者 //*[@id="info"]//a[1]/text()
+        # 评分 //*[@property="v:average"]/text()
+        # 内容简介 //*[@class="related_info"]//*[@class="intro"][1]//p[1]/text()
+        # https://book.douban.com/subject/6973970
+
+        # 原文摘录 url+/blockquotes?sort=score&start=0 进入原文摘录  
+        # 文章提取地址  //*[@class="blockquote-list score bottom-line"]//li/figure/text()[1]
+        # https://book.douban.com/subject/6973970/blockquotes?sort=score&start=0
+        # https://book.douban.com/subject/6973970/blockquotes?sort=score&start=20
+        # //*[@class="paginator"]/a[10]/text()  获取最大页码值  上述可查  每次跳转为20
+
+        # 长评 url+/reviews?start=0 进入长评
+        # 评论提取地址  //*[@class="review-list  "]//*[@class="short-content"]/text()
+        # https://book.douban.com/subject/6973970/reviews?start=20
+        # https://book.douban.com/subject/6973970/reviews?start=20
+        # //*[@class="paginator"]/a[10]/text()  获取最大页码值  上述可查  每次跳转为20
+
+        # 读书笔记 url+/annotation?sort=rank&start=0
+        # 提取地址 //*[@class="comments by_rank"]//*[@class="short"]/span/text()
+        # https://book.douban.com/subject/6973970/annotation?sort=rank&start=0
+        # https://book.douban.com/subject/6973970/annotation?sort=rank&start=20
+        # //*[@class="paginator"]/a[10]/text()  获取最大页码值  上述可查  每次跳转为20
+        ```
 
 ## 待办事件
 
