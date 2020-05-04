@@ -3,37 +3,37 @@
 | 爬虫列表                                          |                                                  |                                                              |                                                              |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [妹子图爬取](meizi_web_spider/spider_mm.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
-| [使用框架的通用图书爬虫](book_spider/book_spider) |                                                  |                                                              |                                                              |
+| [使用Scrapy的图书爬虫](book_spider/book_spider) |                                                  |                                                              |                                                              |
 |                                                   |                                                  |                                                              |                                                              |
 
 
 
 1. [妹子图爬取](meizi_web_spider/spider_mm.py)  
-- 在get_page_link方法中有个限制，取消后可以直接爬取全站分页，否则只能爬取全站分页的52页。
-    
-- Windows系统电脑可以直接运行这个[文件](meizi_web_spider/dist/spider_mm.exe)
-    
-- 加入[每日一爬](meizi_web_spider/everyday_spider_mm.py)功能(只爬取每日更新图片)
+   - 在get_page_link方法中有个限制，取消后可以直接爬取全站分页，否则只能爬取全站分页的52页。
+       
+   - Windows系统电脑可以直接运行这个[文件](meizi_web_spider/dist/spider_mm.exe)
+       
+   - 加入[每日一爬](meizi_web_spider/everyday_spider_mm.py)功能(只爬取每日更新图片)
     
 2. [有道翻译](youdao_web_spider/YouDaoTranslate.py)
-- 抓取移动端的有道词典，实时进行翻译
-    
-- 和第一个妹子图不同的请求方式，你可以看到使用post请求返回的结果
-    
-- 开始尝试使用面向对象的思路写爬虫程序
+   - 抓取移动端的有道词典，实时进行翻译
+       
+   - 和第一个妹子图不同的请求方式，你可以看到使用post请求返回的结果
+       
+   - 开始尝试使用面向对象的思路写爬虫程序
     
 3. [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py)
    - 抓取当当网站畅销书排行(ps:还是要多读书额)
      
-- 另外附赠4月25日抓取的[数据](dangdang_web_spider/当当网图书销量排行榜.txt)
+   - 另外附赠4月25日抓取的[数据](dangdang_web_spider/当当网图书销量排行榜.txt)
+     
+   - 使用两种方式保存抓取到的数据
   
-- 使用两种方式保存抓取到的数据
+     - 使用txt格式时，什么都不需要做，只要运行就好
+     
+     - 使用MongoDB时，需要额外安装Mongo数据库和pymongo
   
-  - 使用txt格式时，什么都不需要做，只要运行就好
-  
-  - 使用MongoDB时，需要额外安装Mongo数据库和pymongo
-  
-- 抓取时，使用的xpath如下：
+   - 抓取时，使用的xpath如下：
   
         ```
         # 页码 //*[@class="data"]/span[2]/text()
@@ -113,7 +113,7 @@
    - 使用Scrapy框架创建的一个通用网络爬虫，针对不同网站编写不同的网络爬虫,对网页的抓取，实现网页文本的本地化存储。
      - 目前已经实现的网路爬虫
      
-       | 每日一文爬虫-meiriyiwen |      |      |      |
+       | 每日一文爬虫-[效果图](img/book_spider/meiriyiwen效果图.png) |69小说网-[效果图](img/book_spider/novel效果图.png) |      |      |
        | :----------- | ---- | ---- | ---- |
        |              |      |      |      |
        

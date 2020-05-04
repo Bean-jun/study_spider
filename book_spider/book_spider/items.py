@@ -8,9 +8,14 @@
 import scrapy
 
 
-class BookSpiderItem(scrapy.Item):
+class BookSpiderItem_MeiRiYiWen(scrapy.Item):
     # define the fields for your item here like:
     name = scrapy.Field()
     author = scrapy.Field()
     text = scrapy.Field()
-    
+
+class BookSpiderItem_A69Novel(scrapy.Item):
+    novel_name = scrapy.Field()
+    novel_chapter = scrapy.Field()  
+    novel_content = scrapy.Field() 
+    _id = scrapy.Field()
