@@ -3,7 +3,7 @@
 | 爬虫列表                                          |                                                  |                                                              |                                                              |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [妹子图爬取](meizi_web_spider/spider_mm.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
-| [使用Scrapy的图书爬虫](book_spider/book_spider) |                                                  |                                                              |                                                              |
+| [使用Scrapy的图书爬虫](book_spider/book_spider) |    [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)                                              |                                                              |                                                              |
 |                                                   |                                                  |                                                              |                                                              |
 
 
@@ -116,7 +116,12 @@
        | 每日一文爬虫-[效果图](img/book_spider/meiriyiwen效果图.png) |69小说网-[效果图](img/book_spider/novel效果图.png) |      |      |
        | :----------- | ---- | ---- | ---- |
        |              |      |      |      |
-       
+
+6. [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)
+    - 使用关键字来搜索百度网站中共享的资源
+      - 效果图   
+      ![alt](img/baidu_pan/baidu_pan效果图.png)
+
 
 ## 待办事件
 
