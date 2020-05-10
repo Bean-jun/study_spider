@@ -3,7 +3,7 @@
 | 爬虫列表                                          |                                                  |                                                              |                                                              |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [妹子图爬取](meizi_web_spider/spider_mm.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
-| [使用Scrapy的图书爬虫](book_spider/book_spider) |    [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)                                              |                                                              |                                                              |
+| [使用Scrapy的图书爬虫](book_spider/book_spider) |    [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)                                              | [电子图书搜索神器](search_book_net/Find_book_pdf.py)                                                             |                                                              |
 |                                                   |                                                  |                                                              |                                                              |
 
 
@@ -122,6 +122,12 @@
       - 效果图   
       ![alt](img/baidu_pan/baidu_pan效果图.png)
 
+7. [电子图书资料搜索器](search_book_net/Find_book_pdf.py)
+      - 简单使用了一下@property装饰器，好用！
+      - 未加入网站过滤，一般查看搜索后以`https://pan开头`的,效果更佳！
+      - 这个也是post请求，而且返回的是json数据，具体可以看代码部分
+      - 效果图   
+      ![alt](img/search_book_net/Find_book_pdf效果图.png)
 
 ## 待办事件
 
