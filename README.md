@@ -8,7 +8,7 @@
 
 
 
-1. [妹子图爬取](meizi_web_spider/spider_mm.py)  
+1. [妹子图爬取](meizi_web_spider/spider_mm.py) 已更新使用面向对象方法的抓取方式[地址](meizi_web_spider/new_mz_spider.py)   
    - 在get_page_link方法中有个限制，取消后可以直接爬取全站分页，否则只能爬取全站分页的52页。
        
    - Windows系统电脑可以直接运行这个[文件](meizi_web_spider/dist/spider_mm.exe)
@@ -137,6 +137,5 @@
 
 ## 待办事件
 
-- 将妹子图使用面向对象的思路重构代码
 - 加入更多的爬虫项目
 - 适当加入一些爬虫项目中的经验
