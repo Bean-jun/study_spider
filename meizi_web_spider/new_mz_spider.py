@@ -82,10 +82,9 @@ class MeiZiSpider():
                 self.photo_url.append(temp)
         return self.photo_url
 
-    def save_photo(self,word):
-        self._get_photo_link(word)
-        for url in tqdm(self.photo_url):
-            index = self.photo_url.index(url) + 1
+    def save_photo(self,more_url):
+        for url in tqdm(more_url):
+            index = more_url.index(url) + 1
             pattern = re.compile(r'\d{6,10}')
             page_photo_id_s = re.findall(pattern, url)
             page_photo_id = page_photo_id_s[0]
@@ -101,16 +100,31 @@ class MeiZiSpider():
                     f.write(r.content)
             except:
                 pass
+        
+    def mult_threading(self, word):
+        full_url = self._get_photo_link(word)
+        left = len(full_url) // 4
+        mid = len(full_url) // 2
+        right = len(full_url) * 3 // 4
+        t1 = threading.Thread(target=self.save_photo, args=(full_url[0:left],))
+        t2 = threading.Thread(target=self.save_photo, args=(full_url[left:mid],))
+        t3 = threading.Thread(target=self.save_photo, args=(full_url[mid:right],))
+        t4 = threading.Thread(target=self.save_photo, args=(full_url[right:-1],))
+        new_list = [t1, t2, t3, t4]
+        for i in new_list:
+            i.start()
+        for j in new_list:
+            j.join()
 
     def run(self, num):
         if num == '1':
-            self.save_photo('xinggan/')
+            self.mult_threading('xinggan/')
         elif num == '2':
-            self.save_photo('japan/')
+            self.mult_threading('japan/')
         elif num == '3':
-            self.save_photo('taiwan/')
+            self.mult_threading('taiwan/')
         elif num == '4':
-            self.save_photo('mm/')
+            self.mult_threading('mm/')
         else:
             pass
 
