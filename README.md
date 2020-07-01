@@ -2,7 +2,7 @@
 
 | 爬虫列表                                          |                                                  |                                                              |                                                              |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [妹子图爬取](meizi_web_spider/spider_mm.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
+| [妹子图爬取](meizi_web_spider/add_proxy_mz_spider.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
 | [使用Scrapy的图书爬虫](book_spider/book_spider) |    [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)                                              | [电子图书搜索神器](search_book_net/Find_book_pdf.py)                                                             |  [selenium实现163邮箱自动发送](163_email/email_163.py)                                                             |
 |                                                   |                                                  |                                                              |                                                              |
 
