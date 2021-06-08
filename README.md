@@ -2,24 +2,23 @@
 
 | 爬虫列表                                          |                                                  |                                                              |                                                              |
 | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [妹子图爬取](meizi_web_spider/add_proxy_mz_spider.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
+| [go教程爬取](go/Go_docx_spyder.py)       | [有道翻译](youdao_web_spider/YouDaoTranslate.py) | [当当书城畅销书排行](dangdang_web_spider/DangDangWangBook.py) | [豆瓣读书网站评论及原文摘要](douban_web_spider/DouBanBook.py) |
 | [使用Scrapy的图书爬虫](book_spider/book_spider) |    [百度网盘资料搜索器](baidu_pan_spider/crawlbaidunet.py)                                              | [电子图书搜索神器](search_book_net/Find_book_pdf.py)                                                             |  [selenium实现163邮箱自动发送](163_email/email_163.py)                                                             |
 |                                                   |                                                  |                                                              |                                                              |
 
 
 
-1. [妹子图爬取](meizi_web_spider/spider_mm.py) 已更新使用面向对象方法的抓取方式[地址](meizi_web_spider/new_mz_spider.py)   
-   - 在面向对象方法中加入多线程，使用4个线程，但是可能会被封IP，故再次优化版本，使用2个线程，配合IP代理池使用，该版本[地址](meizi_web_spider/add_proxy_mz_spider.py)。    
-   - 在get_page_link方法中有个限制，取消后可以直接爬取全站分页，否则只能爬取全站分页的52页。
-       
-   - Windows系统电脑可以直接运行这个[文件](meizi_web_spider/dist/spider_mm.exe)
-       
-   - 加入[每日一爬](meizi_web_spider/everyday_spider_mm.py)功能(只爬取每日更新图片)
+1. [go教程爬取](go/Go_docx_spyder.py) 
+    - 获取老男孩pythonav中go教程
+      
+    - 基于异步协程实现，爬取一个go教程时间为0.5秒左右
+    
+    - [样例](go/Go)
     
 2. [有道翻译](youdao_web_spider/YouDaoTranslate.py)
    - 抓取移动端的有道词典，实时进行翻译
        
-   - 和第一个妹子图不同的请求方式，你可以看到使用post请求返回的结果
+   - 你可以看到使用post请求返回的结果
        
    - 开始尝试使用面向对象的思路写爬虫程序
     
